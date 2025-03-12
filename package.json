@@ -10,9 +10,10 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "vercel-build": "npm ci && next build"
   },
   "engines": {
-    "node": "16.x"
+    "node": "18.x"
   }
 }
