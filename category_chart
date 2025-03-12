@@ -1,0 +1,17 @@
+import { PieChart, Pie, Cell, Tooltip, Legend } from 'recharts';
+
+const CategoryPieChart = ({ transactions }) => {
+  const categoryData = prepareCategoryData(transactions); // Process data into categories
+
+  return (
+    <PieChart width={400} height={400}>
+      <Pie data={categoryData} dataKey="value" nameKey="category" outerRadius={150} fill="#8884d8" label>
+        {categoryData.map((entry, index) => (
+          <Cell key={`cell-${index}`} fill={getCategoryColor(entry.category)} />
+        ))}
+      </Pie>
+      <Tooltip />
+      <Legend />
+    </PieChart>
+  );
+};
